@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maple Bear Teresina | Year 5 Exhibition Blog</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- QRCode.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <!-- Google Fonts: Outfit & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maple: {
+                            red: '#D8232A',
+                            darkRed: '#9E0B12',
+                            brightRed: '#F42A36',
+                            gold: '#FFC72C',
+                            navy: '#0B182B',
+                            bgLight: '#FAFAFA',
+                            pureWhite: '#FFFFFF',
+                            softGray: '#F3F4F6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .maple-red-gradient {
+            background: linear-gradient(135deg, #E61E27 0%, #A30811 100%);
+        }
+        .maple-hero-bg {
+            background-color: #D8232A;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 0, 0, 0.1) 0%, transparent 25%);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F1F1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D8232A;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-maple-bgLight text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md border-b-2 border-maple-red">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-22 py-3">
+                <!-- Logo area with prominent MAPLE BEAR TERESINA and smaller Year 5 -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="scrollToTop()">
+                    <div class="w-12 h-12 bg-maple-red rounded-2xl flex items-center justify-center text-white shadow-md shadow-red-200 border-2 border-white">
+                        <!-- Bear Face SVG Icon -->
+                        <svg class="w-8 h-8 fill-current text-white" viewBox="0 0 24 24">
+                            <path d="M6 3a3 3 0 0 0-3 3 3 3 0 0 0 1.25 2.448A8.005 8.005 0 0 0 3 13c0 4.418 4.03 8 9 8s9-3.582 9-8a8.005 8.005 0 0 0-1.25-4.552A3 3 0 0 0 21 6a3 3 0 0 0-3-3 3 3 0 0 0-2.25 1.015A9.957 9.957 0 0 0 12 3c-1.32 0-2.583.256-3.75.715A3 3 0 0 0 6 3zm0 2a1 1 0 0 1 1 1c0 .245.088.47.234.646C6.46 7.14 6 7.935 6 9a1 1 0 1 1-2 0 1 1 0 0 1 1-1h.05A1 1 0 0 1 6 5zm12 0a1 1 0 0 1 .95 1.3 1 1 0 0 1-1 1A1 1 0 0 1 17 9a1 1 0 1 1-2 0c0-1.065-.46-1.86-1.234-2.354A1 1 0 0 1 14 6a1 1 0 0 1 1-1c.28 0 .546.046.793.132A1 1 0 0 1 18 5zm-6 6c1.657 0 3 1.12 3 2.5S13.657 16 12 16s-3-1.12-3-2.5S10.343 11 12 11zm-2 2a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zm4 0a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1z"/>
+                        </svg>
+                    </div>
+                    <div class="leading-none">
+                        <!-- BIG MAPLE BEAR TERESINA -->
+                        <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-maple-red tracking-tight uppercase">
+                            MAPLE BEAR TERESINA
+                        </h1>
+                        <!-- Smaller Year 5 badge -->
+                        <div class="flex items-center space-x-2 mt-0.5">
+                            <span class="text-xs font-bold text-slate-600 uppercase tracking-widest bg-red-50 border border-red-200 px-2 py-0.5 rounded-md">
+                                Year 5 • Great Minds Exhibition
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#figures" class="text-slate-700 hover:text-maple-red font-bold transition-colors">Personagens</a>
+                    <a href="#students-work" class="text-slate-700 hover:text-maple-red font-bold transition-colors">Produções dos Alunos</a>
+                    <a href="#gallery" class="text-slate-700 hover:text-maple-red font-bold transition-colors">Galeria de Fotos</a>
+                    <button onclick="openQrModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-800 px-4 py-2.5 rounded-full font-bold transition-all flex items-center space-x-2 text-sm border border-slate-300">
+                        <i data-lucide="qr-code" class="w-4 h-4 text-maple-red"></i>
+                        <span>QR Code Celular</span>
+                    </button>
+                    <button onclick="openPublishModal()" class="bg-maple-red hover:bg-maple-darkRed text-white px-5 py-2.5 rounded-full font-bold shadow-md shadow-red-200 transition-all flex items-center space-x-2">
+                        <i data-lucide="plus-circle" class="w-5 h-5"></i>
+                        <span>Novo Post</span>
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <button onclick="openQrModal()" class="bg-slate-100 text-slate-800 p-2 rounded-xl border border-slate-200">
+                        <i data-lucide="qr-code" class="w-5 h-5 text-maple-red"></i>
+                    </button>
+                    <button onclick="openPublishModal()" class="bg-maple-red text-white p-2 rounded-xl shadow">
+                        <i data-lucide="plus-circle" class="w-5 h-5"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-xl text-slate-700 hover:bg-slate-100">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile dropdown menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-3">
+            <a href="#figures" onclick="toggleMobileMenu()" class="block text-slate-800 font-bold py-2">Personagens</a>
+            <a href="#students-work" onclick="toggleMobileMenu()" class="block text-slate-800 font-bold py-2">Produções dos Alunos</a>
+            <a href="#gallery" onclick="toggleMobileMenu()" class="block text-slate-800 font-bold py-2">Galeria de Fotos</a>
+            <button onclick="openQrModal(); toggleMobileMenu();" class="w-full text-left bg-slate-100 font-bold py-2 px-3 rounded-xl flex items-center space-x-2 text-slate-800">
+                <i data-lucide="qr-code" class="w-4 h-4 text-maple-red"></i>
+                <span>Gerar QR Code para Acesso no Celular</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Banner (Vibrant Red & White Palette with Bear Mascot) -->
+    <section class="relative maple-hero-bg text-white overflow-hidden py-16 lg:py-24 border-b-8 border-white">
+        <!-- Bear Silhouette background element -->
+        <div class="absolute -right-12 -bottom-12 opacity-10 pointer-events-none">
+            <svg class="w-96 h-96 fill-white" viewBox="0 0 24 24">
+                <path d="M6 3a3 3 0 0 0-3 3 3 3 0 0 0 1.25 2.448A8.005 8.005 0 0 0 3 13c0 4.418 4.03 8 9 8s9-3.582 9-8a8.005 8.005 0 0 0-1.25-4.552A3 3 0 0 0 21 6a3 3 0 0 0-3-3 3 3 0 0 0-2.25 1.015A9.957 9.957 0 0 0 12 3c-1.32 0-2.583.256-3.75.715A3 3 0 0 0 6 3z"/>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Main Title Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    
+                    <!-- Top Tag with Mascot -->
+                    <div class="inline-flex items-center space-x-2 bg-white text-maple-red px-4 py-2 rounded-full font-extrabold text-xs tracking-wider shadow-lg uppercase">
+                        <i data-lucide="maple-leaf" class="w-4 h-4 fill-maple-red"></i>
+                        <span>Escola Bilingue Canadense</span>
+                    </div>
+
+                    <!-- PROMINENT SCHOOL NAME -->
+                    <div class="space-y-1">
+                        <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none text-white drop-shadow-sm">
+                            MAPLE BEAR <br>
+                            <span class="text-white underline decoration-maple-gold decoration-4">TERESINA</span>
+                        </h1>
+                        <!-- Smaller Year 5 subtitle -->
+                        <div class="pt-2">
+                            <span class="inline-block bg-maple-darkRed text-white text-base sm:text-xl font-bold px-4 py-1.5 rounded-xl border border-white/30 shadow">
+                                Year 5 • Interdisciplinary Exhibition
+                            </span>
+                        </div>
+                    </div>
+
+                    <p class="text-white/95 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
+                        Bem-vindos ao espaço do <strong>Year 5 da Maple Bear Teresina</strong>! Aqui nossos pequenos grandes líderes compartilham suas pesquisas, biografias e caracterizações de 9 figuras célebres que mudaram o mundo.
+                    </p>
+
+                    <!-- Quick Figures Badges -->
+                    <div class="pt-2 flex flex-wrap gap-2 justify-center lg:justify-start">
+                        <span class="bg-white/20 hover:bg-white hover:text-maple-red transition-all text-white font-semibold text-xs px-3 py-1.5 rounded-full border border-white/30 cursor-pointer" onclick="filterByPerson('esperanca')">Esperança Garcia</span>
+                        <span class="bg-white/20 hover:bg-white hover:text-maple-red transition-all text-white font-semibold text-xs px-3 py-1.5 rounded-full border border-white/30 cursor-pointer" onclick="filterByPerson('tarsila')">Tarsila do Amaral</span>
+                        <span class="bg-white/20 hover:bg-white hover:text-maple-red transition-all text-white font-semibold text-xs px-3 py-1.5 rounded-full border border-white/30 cursor-pointer" onclick="filterByPerson('malala')">Malala Yousafzai</span>
+                        <span class="bg-white/20 hover:bg-white hover:text-maple-red transition-all text-white font-semibold text-xs px-3 py-1.5 rounded-full border border-white/30 cursor-pointer" onclick="filterByPerson('anne')">Anne Frank</span>
+                        <span class="bg-white/20 hover:bg-white hover:text-maple-red transition-all text-white font-semibold text-xs px-3 py-1.5 rounded-full border border-white/30 cursor-pointer" onclick="filterByPerson('einstein')">Albert Einstein</span>
+                        <span class="bg-white/20 hover:bg-white hover:text-maple-red transition-all text-white font-semibold text-xs px-3 py-1.5 rounded-full border border-white/30 cursor-pointer" onclick="filterByPerson('luiz')">Luiz Gonzaga</span>
+                        <span class="bg-white/20 hover:bg-white hover:text-maple-red transition-all text-white font-semibold text-xs px-3 py-1.5 rounded-full border border-white/30 cursor-pointer" onclick="filterByPerson('newton')">Isaac Newton</span>
+                        <span class="bg-white/20 hover:bg-white hover:text-maple-red transition-all text-white font-semibold text-xs px-3 py-1.5 rounded-full border border-white/30 cursor-pointer" onclick="filterByPerson('santos')">Santos Dumont</span>
+                        <span class="bg-white/20 hover:bg-white hover:text-maple-red transition-all text-white font-semibold text-xs px-3 py-1.5 rounded-full border border-white/30 cursor-pointer" onclick="filterByPerson('davinci')">Leonardo da Vinci</span>
+                    </div>
+                </div>
+
+                <!-- Mascot & Dashboard Showcase Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white text-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl border-4 border-white relative overflow-hidden">
+                        
+                        <!-- Maple Bear Mascot Header inside Card -->
+                        <div class="flex items-center space-x-4 border-b border-slate-100 pb-5 mb-5">
+                            <div class="w-16 h-16 bg-red-50 rounded-2xl border-2 border-maple-red flex items-center justify-center p-2 shadow-inner">
+                                <!-- Mascot Bear Graphic -->
+                                <svg class="w-12 h-12 fill-maple-red" viewBox="0 0 24 24">
+                                    <path d="M6 3a3 3 0 0 0-3 3 3 3 0 0 0 1.25 2.448A8.005 8.005 0 0 0 3 13c0 4.418 4.03 8 9 8s9-3.582 9-8a8.005 8.005 0 0 0-1.25-4.552A3 3 0 0 0 21 6a3 3 0 0 0-3-3 3 3 0 0 0-2.25 1.015A9.957 9.957 0 0 0 12 3c-1.32 0-2.583.256-3.75.715A3 3 0 0 0 6 3zm0 2a1 1 0 0 1 1 1c0 .245.088.47.234.646C6.46 7.14 6 7.935 6 9a1 1 0 1 1-2 0 1 1 0 0 1 1-1h.05A1 1 0 0 1 6 5zm12 0a1 1 0 0 1 .95 1.3 1 1 0 0 1-1 1A1 1 0 0 1 17 9a1 1 0 1 1-2 0c0-1.065-.46-1.86-1.234-2.354A1 1 0 0 1 14 6a1 1 0 0 1 1-1c.28 0 .546.046.793.132A1 1 0 0 1 18 5zm-6 6c1.657 0 3 1.12 3 2.5S13.657 16 12 16s-3-1.12-3-2.5S10.343 11 12 11zm-2 2a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zm4 0a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-extrabold text-xl text-maple-red uppercase tracking-wide">Maple Bear Teresina</h3>
+                                <p class="text-xs text-slate-500 font-semibold">Mural Pedagógico do Year 5</p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Stats Grid -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-red-50 p-4 rounded-2xl border border-red-100 text-center">
+                                <i data-lucide="file-text" class="w-6 h-6 text-maple-red mx-auto mb-1"></i>
+                                <span class="block font-display font-black text-3xl text-maple-red" id="stat-posts">3</span>
+                                <span class="text-xs text-slate-600 font-bold uppercase">Redações</span>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-center">
+                                <i data-lucide="camera" class="w-6 h-6 text-slate-700 mx-auto mb-1"></i>
+                                <span class="block font-display font-black text-3xl text-slate-800" id="stat-photos">4</span>
+                                <span class="text-xs text-slate-600 font-bold uppercase">Fotos Cosplay</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Button -->
+                        <div class="mt-6 pt-2">
+                            <button onclick="scrollToSection('figures')" class="w-full py-3 bg-maple-red hover:bg-maple-darkRed text-white rounded-2xl font-bold shadow-lg shadow-red-200 transition-all flex items-center justify-center space-x-2 text-sm uppercase tracking-wider">
+                                <span>Explorar os 9 Grandes Autores</span>
+                                <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Luminaries Grid Section -->
+    <section id="figures" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-maple-red font-black uppercase text-xs tracking-widest block mb-2 bg-red-50 inline-block px-3 py-1 rounded-full border border-red-100">
+                MAPLE BEAR TERESINA • YEAR 5
+            </span>
+            <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900">Os 9 Personagens Históricos</h2>
+            <p class="text-slate-600 mt-3 text-base">Filtre por autor para ver as pesquisas, textos e fotos dos alunos do Year 5 caracterizados.</p>
+        </div>
+
+        <!-- Filter bar -->
+        <div class="flex flex-wrap gap-2 justify-center mb-8" id="figure-filter-bar">
+            <button onclick="filterByPerson('all')" class="filter-btn active bg-maple-red text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm transition-all">Todos</button>
+        </div>
+
+        <!-- Figures Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="figures-grid">
+            <!-- Cards filled dynamically via JS -->
+        </div>
+    </section>
+
+    <!-- Student Works / Posts Section -->
+    <section id="students-work" class="py-16 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-maple-red font-black uppercase text-xs tracking-widest block mb-1">PRODUÇÃO TEXTUAL • MAPLE BEAR TERESINA</span>
+                    <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900">Textos do Year 5</h2>
+                    <p class="text-slate-600 mt-2">Biografias, cartas simuladas e resumos críticos produzidos em sala de aula.</p>
+                </div>
+                <div class="mt-4 md:mt-0 flex items-center space-x-3">
+                    <button onclick="openPublishModal()" class="bg-maple-red hover:bg-maple-darkRed text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-md shadow-red-200 flex items-center space-x-2">
+                        <i data-lucide="file-plus" class="w-4 h-4"></i>
+                        <span>Publicar Novo Texto</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Posts List Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="posts-container">
+                <!-- Posts inserted by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <span class="text-maple-red font-black uppercase text-xs tracking-widest block mb-1">CHARACTERIZATION DAY</span>
+                <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900">Alunos Caracterizados</h2>
+                <p class="text-slate-600 mt-2">Fotos dos estudantes do Year 5 vestidos como os autores e cientistas!</p>
+            </div>
+            <button onclick="openUploadPhotoModal()" class="mt-4 md:mt-0 bg-slate-900 hover:bg-slate-800 text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-md transition-all flex items-center space-x-2">
+                <i data-lucide="camera" class="w-4 h-4"></i>
+                <span>Anexar Foto de Aluno</span>
+            </button>
+        </div>
+
+        <!-- Photos Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="gallery-container">
+            <!-- Photos inserted dynamically -->
+        </div>
+    </section>
+
+    <!-- Footer with Maple Bear Teresina Branding -->
+    <footer class="bg-maple-red text-white mt-auto pt-12 pb-8 border-t-8 border-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-white/20">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-white text-maple-red rounded-xl flex items-center justify-center shadow">
+                            <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+                                <path d="M6 3a3 3 0 0 0-3 3 3 3 0 0 0 1.25 2.448A8.005 8.005 0 0 0 3 13c0 4.418 4.03 8 9 8s9-3.582 9-8a8.005 8.005 0 0 0-1.25-4.552A3 3 0 0 0 21 6a3 3 0 0 0-3-3 3 3 0 0 0-2.25 1.015A9.957 9.957 0 0 0 12 3c-1.32 0-2.583.256-3.75.715A3 3 0 0 0 6 3z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <!-- PROMINENT FOOTER TEXT -->
+                            <h3 class="font-display font-extrabold text-xl text-white uppercase leading-none">MAPLE BEAR TERESINA</h3>
+                            <span class="text-xs font-bold text-white/80 uppercase">Year 5 Exhibition</span>
+                        </div>
+                    </div>
+                    <p class="text-white/80 text-xs leading-relaxed">
+                        Projeto pedagógico bilíngue interdisciplinar (Língua Portuguesa, English Language Arts e História). Desenvolvido pelos alunos do Year 5 da unidade Maple Bear Teresina.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-white text-xs uppercase tracking-wider mb-4 border-b border-white/20 pb-1">Personagens Estudados</h4>
+                    <ul class="grid grid-cols-2 gap-1.5 text-xs text-white/90 font-medium">
+                        <li>• Esperança Garcia</li>
+                        <li>• Tarsila do Amaral</li>
+                        <li>• Malala Yousafzai</li>
+                        <li>• Anne Frank</li>
+                        <li>• Albert Einstein</li>
+                        <li>• Luiz Gonzaga</li>
+                        <li>• Isaac Newton</li>
+                        <li>• Santos Dumont</li>
+                        <li>• Leonardo da Vinci</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-white text-xs uppercase tracking-wider mb-4 border-b border-white/20 pb-1">Coordenação Maple Bear</h4>
+                    <p class="text-xs text-white/80 mb-3">Painel restrito para verificação dos conteúdos publicados.</p>
+                    <button onclick="openQrModal()" class="mb-2 text-xs bg-white text-maple-red font-bold px-3 py-2 rounded-xl transition-colors w-full text-center flex items-center justify-center space-x-2 shadow">
+                        <i data-lucide="qr-code" class="w-4 h-4"></i>
+                        <span>Gerar QR Code do Site</span>
+                    </button>
+                    <button onclick="alert('Área de moderação pedagógica Maple Bear Teresina.')" class="text-xs bg-white/10 hover:bg-white/20 text-white px-3 py-2 rounded-xl border border-white/30 transition-colors w-full text-left flex items-center justify-between font-semibold">
+                        <span>Acessar Painel da Escola</span>
+                        <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+    <!-- Modal: QR Code para Dispositivos Móveis -->
+    <div id="qr-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl text-center relative">
+            <button onclick="closeQrModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-2 rounded-full hover:bg-slate-100">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="w-12 h-12 bg-red-50 text-maple-red rounded-2xl flex items-center justify-center mx-auto mb-3 border border-red-100">
+                <i data-lucide="smartphone" class="w-6 h-6"></i>
+            </div>
+
+            <h3 class="font-display font-black text-2xl text-slate-900 mb-1">Acesse no Smartphone</h3>
+            <p class="text-xs text-slate-500 mb-6">Abra a câmera do iPhone ou Android para visualizar o blog do Year 5 da Maple Bear Teresina.</p>
+
+            <!-- Display Container for generated QR Code -->
+            <div class="bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-red-200 inline-block mb-4">
+                <div id="qrcode-container" class="flex justify-center items-center min-w-[180px] min-h-[180px]"></div>
+            </div>
+
+            <div class="space-y-3">
+                <div>
+                    <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1 text-left">URL do Blog para Gerar QR Code:</label>
+                    <input type="text" id="qr-url-input" class="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl focus:ring-2 focus:ring-maple-red/50 focus:outline-none" placeholder="Cole a URL do blog aqui..." oninput="updateQrCode()">
+                </div>
+                
+                <p class="text-[11px] text-slate-400">
+                    <i data-lucide="info" class="w-3.5 h-3.5 inline mr-1"></i>
+                    Compatível com iOS (iPhone/iPad) e Android.
+                </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-100">
+                <button onclick="closeQrModal()" class="w-full py-2.5 bg-maple-red hover:bg-maple-darkRed text-white rounded-xl font-bold text-sm shadow">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Publicar Novo Texto -->
+    <div id="publish-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl overflow-y-auto max-h-[90vh]">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-6">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-red-50 text-maple-red rounded-xl flex items-center justify-center border border-red-100">
+                        <i data-lucide="pen-tool" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-bold text-xl text-slate-900">Publicar Produção do Aluno</h3>
+                        <p class="text-xs text-slate-500">Maple Bear Teresina • Year 5</p>
+                    </div>
+                </div>
+                <button onclick="closePublishModal()" class="text-slate-400 hover:text-slate-600 p-2 rounded-full hover:bg-slate-100">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <form id="publish-form" onsubmit="handlePublishText(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Nome do(a) Aluno(a) / Dupla</label>
+                    <input type="text" id="post-student-name" required placeholder="Ex: Lucas M. e Sofia B." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-maple-red/50 text-sm">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Personagem Estudado</label>
+                        <select id="post-figure" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-maple-red/50 text-sm bg-white">
+                            <option value="">Selecione...</option>
+                            <option value="esperanca">Esperança Garcia</option>
+                            <option value="tarsila">Tarsila do Amaral</option>
+                            <option value="malala">Malala Yousafzai</option>
+                            <option value="anne">Anne Frank</option>
+                            <option value="einstein">Albert Einstein</option>
+                            <option value="luiz">Luiz Gonzaga</option>
+                            <option value="newton">Isaac Newton</option>
+                            <option value="santos">Santos Dumont</option>
+                            <option value="davinci">Leonardo da Vinci</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Tipo de Texto</label>
+                        <select id="post-type" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-maple-red/50 text-sm bg-white">
+                            <option value="Biografia">Biografia Resumida</option>
+                            <option value="Carta Histórica">Carta / Diário Simulado</option>
+                            <option value="Ensaio Crítico">Ensaio Crítico / Opinião</option>
+                            <option value="Poema">Poema / Cordel</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Título do Trabalho</label>
+                    <input type="text" id="post-title" required placeholder="Ex: O legado e a coragem de Esperança Garcia" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-maple-red/50 text-sm">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Conteúdo do Texto</label>
+                    <textarea id="post-content" rows="6" required placeholder="Escreva ou cole o texto do aluno aqui..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-maple-red/50 text-sm"></textarea>
+                </div>
+
+                <div class="pt-4 flex justify-end space-x-3">
+                    <button type="button" onclick="closePublishModal()" class="px-5 py-2.5 rounded-xl border border-slate-200 font-bold text-slate-600 hover:bg-slate-50 text-sm">Cancelar</button>
+                    <button type="submit" class="bg-maple-red hover:bg-maple-darkRed text-white px-6 py-2.5 rounded-xl font-bold shadow-md shadow-red-200 text-sm">Publicar Texto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Anexar Foto de Caracterização -->
+    <div id="upload-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-6">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-slate-100 text-slate-800 rounded-xl flex items-center justify-center">
+                        <i data-lucide="camera" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-bold text-xl text-slate-900">Foto de Caracterização</h3>
+                        <p class="text-xs text-slate-500">Maple Bear Teresina • Year 5</p>
+                    </div>
+                </div>
+                <button onclick="closeUploadPhotoModal()" class="text-slate-400 hover:text-slate-600 p-2 rounded-full hover:bg-slate-100">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <form id="upload-form" onsubmit="handleUploadPhoto(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Nome do Aluno(a)</label>
+                    <input type="text" id="photo-student-name" required placeholder="Ex: Gabriel S." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-maple-red/50 text-sm">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Personagem Representado</label>
+                    <select id="photo-figure" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-maple-red/50 text-sm bg-white">
+                        <option value="">Selecione...</option>
+                        <option value="esperanca">Esperança Garcia</option>
+                        <option value="tarsila">Tarsila do Amaral</option>
+                        <option value="malala">Malala Yousafzai</option>
+                        <option value="anne">Anne Frank</option>
+                        <option value="einstein">Albert Einstein</option>
+                        <option value="luiz">Luiz Gonzaga</option>
+                        <option value="newton">Isaac Newton</option>
+                        <option value="santos">Santos Dumont</option>
+                        <option value="davinci">Leonardo da Vinci</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Selecione uma Imagem ou Cole uma URL</label>
+                    <input type="file" id="photo-file-input" accept="image/*" onchange="previewFileImage(event)" class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200 mb-2">
+                    <input type="url" id="photo-url-input" placeholder="https://exemplo.com/foto.jpg" class="w-full px-4 py-2 rounded-xl border border-slate-200 text-sm">
+                </div>
+
+                <div id="photo-preview-container" class="hidden p-2 bg-slate-50 rounded-2xl border border-slate-200 text-center">
+                    <span class="text-xs text-slate-400 block mb-1">Pré-visualização:</span>
+                    <img id="photo-preview-img" src="" class="max-h-36 mx-auto rounded-xl object-cover">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Descrição / Legenda</label>
+                    <input type="text" id="photo-caption" placeholder="Ex: Gabriel com o figurino de Santos Dumont" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-maple-red/50 text-sm">
+                </div>
+
+                <div class="pt-4 flex justify-end space-x-3">
+                    <button type="button" onclick="closeUploadPhotoModal()" class="px-5 py-2.5 rounded-xl border border-slate-200 font-bold text-slate-600 hover:bg-slate-50 text-sm">Cancelar</button>
+                    <button type="submit" class="bg-maple-red hover:bg-maple-darkRed text-white px-6 py-2.5 rounded-xl font-bold shadow-md text-sm">Salvar Foto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const FIGURES = [
+            {
+                id: 'esperanca',
+                name: 'Esperança Garcia',
+                role: 'Símbolo de Resistência e Direito',
+                country: 'Brasil (Piauí)',
+                era: 'Séc. XVIII',
+                bio: 'Mulher negra escravizada no Piauí que escreveu uma carta de petição ao governador denunciando abusos. Reconhecida como a 1ª advogada do Piauí.',
+                placeholderImg: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'tarsila',
+                name: 'Tarsila do Amaral',
+                role: 'Pintora Modernista',
+                country: 'Brasil',
+                era: '1886 - 1973',
+                bio: 'Pintora de obras marcantes como o "Abaporu", foi figura central da Arte Modernista brasileira com cores e brasilidade.',
+                placeholderImg: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'malala',
+                name: 'Malala Yousafzai',
+                role: 'Ativista pela Educação',
+                country: 'Paquistão',
+                era: '1997 - Presente',
+                bio: 'Prêmio Nobel da Paz mais jovem da história, defensora global do direito de todas as meninas irem à escola.',
+                placeholderImg: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'anne',
+                name: 'Anne Frank',
+                role: 'Escritora e Diarista',
+                country: 'Alemanha / Holanda',
+                era: '1929 - 1945',
+                bio: 'Ficou conhecida mundialmente pelo diário escrito durante a Segunda Guerra Mundial, tornando-se um símbolo de esperança.',
+                placeholderImg: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'einstein',
+                name: 'Albert Einstein',
+                role: 'Físico Teórico',
+                country: 'Alemanha / EUA',
+                era: '1879 - 1955',
+                bio: 'Desenvolveu a Teoria da Relatividade e revolucionou a física moderna e nossa percepção de espaço e tempo.',
+                placeholderImg: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'luiz',
+                name: 'Luiz Gonzaga',
+                role: 'O Rei do Baião',
+                country: 'Brasil (Pernambuco)',
+                era: '1912 - 1989',
+                bio: 'Sanfoneiro e compositor que levou a cultura, ritmos e a poesia nordestina para o Brasil e todo o mundo.',
+                placeholderImg: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'newton',
+                name: 'Isaac Newton',
+                role: 'Cientista e Matemático',
+                country: 'Inglaterra',
+                era: '1643 - 1727',
+                bio: 'Formulou as três Leis do Movimento e a Lei da Gravitação Universal, bases fundamentais da física clássica.',
+                placeholderImg: 'https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'santos',
+                name: 'Santos Dumont',
+                role: 'Pai da Aviação',
+                country: 'Brasil',
+                era: '1873 - 1932',
+                bio: 'Inventor brasileiro que projetou e voou com o avião 14-Bis e dirigíveis, sendo pioneiro na aviação mundial.',
+                placeholderImg: 'https://images.unsplash.com/photo-1519074069444-1ba4ed26b334?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'davinci',
+                name: 'Leonardo da Vinci',
+                role: 'Gênio Renascentista',
+                country: 'Itália',
+                era: '1452 - 1519',
+                bio: 'Pintor da Monalisa e cientista visionário que desenvolveu conceitos de engenharia e aviação séculos à frente de seu tempo.',
+                placeholderImg: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80'
+            }
+        ];
+
+        let postsData = [
+            {
+                id: 1,
+                studentName: 'Beatriz e Gabriel (Year 5)',
+                figureId: 'esperanca',
+                type: 'Carta Histórica',
+                title: 'A carta marcante de Esperança Garcia',
+                content: 'Estudamos no Year 5 da Maple Bear Teresina como Esperança Garcia usou sua voz e a escrita no século XVIII para defender seus direitos no Piauí.',
+                date: '21/Out/2026'
+            },
+            {
+                id: 2,
+                studentName: 'Lucas Ferreira',
+                figureId: 'santos',
+                type: 'Biografia',
+                title: 'Santos Dumont: O voo do 14-Bis',
+                content: 'Construímos uma réplica do 14-Bis em sala. Santos Dumont inspirou nossa turma a pensar grande!',
+                date: '18/Out/2026'
+            },
+            {
+                id: 3,
+                studentName: 'Mariana e Alice',
+                figureId: 'malala',
+                type: 'Ensaio Crítico',
+                title: 'O poder da Educação segundo Malala',
+                content: 'Lemos trechos da obra de Malala em inglês no Year 5. Aprendemos o valor de ter uma escola acolhedora e bilíngue!',
+                date: '15/Out/2026'
+            }
+        ];
+
+        let photosData = [
+            {
+                id: 1,
+                studentName: 'Guilherme A.',
+                figureId: 'santos',
+                imageUrl: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80',
+                caption: 'Guilherme caracterizado como Santos Dumont.',
+                date: '19/Out/2026'
+            },
+            {
+                id: 2,
+                studentName: 'Sofia R.',
+                figureId: 'tarsila',
+                imageUrl: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80',
+                caption: 'Sofia caracterizada de Tarsila do Amaral com paleta de cores.',
+                date: '15/Out/2026'
+            },
+            {
+                id: 3,
+                studentName: 'Enzo B.',
+                figureId: 'einstein',
+                imageUrl: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80',
+                caption: 'Enzo vestido de Albert Einstein no laboratório de Ciências.',
+                date: '21/Out/2026'
+            },
+            {
+                id: 4,
+                studentName: 'Thiago M.',
+                figureId: 'luiz',
+                imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80',
+                caption: 'Thiago caracterizado de Luiz Gonzaga com o chapéu de couro.',
+                date: '12/Out/2026'
+            }
+        ];
+
+        let currentFilter = 'all';
+        let uploadedPreviewDataUrl = null;
+        let qrcodeInstance = null;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadLocalStorageData();
+            renderFigureFilterButtons();
+            renderFiguresGrid();
+            renderPosts();
+            renderPhotos();
+            updateCounters();
+            
+            lucide.createIcons();
+            document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+        });
+
+        function openQrModal() {
+            const modal = document.getElementById('qr-modal');
+            const urlInput = document.getElementById('qr-url-input');
+            
+            // Set current browser URL if input is empty
+            if (!urlInput.value) {
+                urlInput.value = window.location.href;
+            }
+            
+            modal.classList.remove('hidden');
+            updateQrCode();
+        }
+
+        function closeQrModal() {
+            document.getElementById('qr-modal').classList.add('hidden');
+        }
+
+        function updateQrCode() {
+            const container = document.getElementById('qrcode-container');
+            const url = document.getElementById('qr-url-input').value || window.location.href;
+            
+            container.innerHTML = '';
+            
+            qrcodeInstance = new QRCode(container, {
+                text: url,
+                width: 180,
+                height: 180,
+                colorDark : "#D8232A",
+                colorLight : "#FFFFFF",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        }
+
+        function loadLocalStorageData() {
+            const savedPosts = localStorage.getItem('mb_teresina_y5_posts');
+            const savedPhotos = localStorage.getItem('mb_teresina_y5_photos');
+            if(savedPosts) postsData = JSON.parse(savedPosts);
+            if(savedPhotos) photosData = JSON.parse(savedPhotos);
+        }
+
+        function saveLocalStorageData() {
+            localStorage.setItem('mb_teresina_y5_posts', JSON.stringify(postsData));
+            localStorage.setItem('mb_teresina_y5_photos', JSON.stringify(photosData));
+            updateCounters();
+        }
+
+        function updateCounters() {
+            document.getElementById('stat-posts').innerText = postsData.length;
+            document.getElementById('stat-photos').innerText = photosData.length;
+        }
+
+        function renderFigureFilterButtons() {
+            const container = document.getElementById('figure-filter-bar');
+            let html = `<button onclick="filterByPerson('all')" class="filter-btn ${currentFilter === 'all' ? 'bg-maple-red text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'} px-4 py-2 rounded-full text-xs font-bold transition-all">Todos os Autores</button>`;
+            
+            FIGURES.forEach(fig => {
+                const isActive = currentFilter === fig.id;
+                html += `
+                    <button onclick="filterByPerson('${fig.id}')" class="filter-btn ${isActive ? 'bg-maple-red text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'} px-3 py-1.5 rounded-full text-xs font-bold transition-all">
+                        ${fig.name}
+                    </button>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        function renderFiguresGrid() {
+            const container = document.getElementById('figures-grid');
+            container.innerHTML = '';
+
+            FIGURES.forEach(fig => {
+                if(currentFilter !== 'all' && currentFilter !== fig.id) return;
+
+                const postCount = postsData.filter(p => p.figureId === fig.id).length;
+                const photoCount = photosData.filter(p => p.figureId === fig.id).length;
+
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group';
+                card.innerHTML = `
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="${fig.placeholderImg}" alt="${fig.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
+                        <div class="absolute top-3 left-3 bg-maple-red text-white px-3 py-1 rounded-full text-[10px] font-black uppercase shadow">
+                            ${fig.era}
+                        </div>
+                        <div class="absolute bottom-3 left-4 right-4 text-white">
+                            <span class="text-[11px] text-maple-gold font-bold block">${fig.country}</span>
+                            <h3 class="font-display font-extrabold text-xl leading-tight">${fig.name}</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-xs font-bold text-maple-red uppercase tracking-wider block mb-1">${fig.role}</span>
+                            <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">${fig.bio}</p>
+                        </div>
+                        
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                            <div class="flex items-center space-x-3 text-slate-500 font-medium">
+                                <span class="flex items-center space-x-1"><i data-lucide="file-text" class="w-3.5 h-3.5 text-maple-red"></i> <span>${postCount} textos</span></span>
+                                <span class="flex items-center space-x-1"><i data-lucide="camera" class="w-3.5 h-3.5 text-slate-700"></i> <span>${photoCount} fotos</span></span>
+                            </div>
+                            <button onclick="filterByPerson('${fig.id}')" class="text-maple-red hover:underline font-bold text-xs flex items-center space-x-1">
+                                <span>Ver Alunos</span>
+                                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            lucide.createIcons();
+        }
+
+        function renderPosts() {
+            const container = document.getElementById('posts-container');
+            container.innerHTML = '';
+
+            const filteredPosts = currentFilter === 'all' 
+                ? postsData 
+                : postsData.filter(p => p.figureId === currentFilter);
+
+            if(filteredPosts.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full py-12 text-center text-slate-400">
+                        <i data-lucide="notebook-pen" class="w-12 h-12 mx-auto mb-3 opacity-40"></i>
+                        <p class="font-medium text-sm">Nenhum texto cadastrado para esta personalidade ainda.</p>
+                        <button onclick="openPublishModal()" class="mt-3 text-xs text-maple-red font-bold underline">Publicar texto do Year 5</button>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            filteredPosts.forEach(post => {
+                const figure = FIGURES.find(f => f.id === post.figureId) || { name: 'Personagem' };
+                
+                const postEl = document.createElement('article');
+                postEl.className = 'bg-slate-50 rounded-3xl p-6 border border-slate-200 hover:border-red-300 transition-all flex flex-col justify-between space-y-4 shadow-sm';
+                postEl.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-red-100 text-maple-darkRed font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-full">
+                                ${post.type}
+                            </span>
+                            <span class="text-[11px] text-slate-400 font-medium">${post.date}</span>
+                        </div>
+                        <h3 class="font-display font-extrabold text-lg text-slate-900 mb-2">${post.title}</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed whitespace-pre-line mb-4">${post.content}</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-7 h-7 rounded-full bg-maple-red text-white text-[10px] font-bold flex items-center justify-center border border-white shadow-sm">
+                                Y5
+                            </div>
+                            <div>
+                                <span class="block text-xs font-bold text-slate-800">${post.studentName}</span>
+                                <span class="block text-[10px] text-slate-500">Sobre: <strong>${figure.name}</strong></span>
+                            </div>
+                        </div>
+                        <button onclick="deletePost(${post.id})" class="text-slate-300 hover:text-red-600 p-1">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                `;
+                container.appendChild(postEl);
+            });
+
+            lucide.createIcons();
+        }
+
+        function renderPhotos() {
+            const container = document.getElementById('gallery-container');
+            container.innerHTML = '';
+
+            const filteredPhotos = currentFilter === 'all' 
+                ? photosData 
+                : photosData.filter(p => p.figureId === currentFilter);
+
+            if(filteredPhotos.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full py-12 text-center text-slate-400">
+                        <i data-lucide="camera-off" class="w-12 h-12 mx-auto mb-3 opacity-40"></i>
+                        <p class="font-medium text-sm">Nenhuma foto adicionada nesta categoria ainda.</p>
+                        <button onclick="openUploadPhotoModal()" class="mt-3 text-xs text-maple-red font-bold underline">Anexar primeira foto!</button>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            filteredPhotos.forEach(photo => {
+                const figure = FIGURES.find(f => f.id === photo.figureId) || { name: 'Personagem' };
+
+                const card = document.createElement('div');
+                card.className = 'group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col';
+                card.innerHTML = `
+                    <div class="relative h-60 overflow-hidden bg-slate-100">
+                        <img src="${photo.imageUrl}" alt="${photo.caption}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x600/D8232A/FFFFFF?text=Maple+Bear+Year+5'">
+                        <div class="absolute top-2 right-2 bg-maple-red text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow">
+                            ${figure.name}
+                        </div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-bold text-xs text-slate-800 mb-1">${photo.studentName}</h4>
+                            <p class="text-slate-600 text-xs line-clamp-2 leading-tight">${photo.caption}</p>
+                        </div>
+                        <div class="mt-3 pt-2 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400">
+                            <span>${photo.date}</span>
+                            <button onclick="deletePhoto(${photo.id})" class="text-slate-300 hover:text-red-500">
+                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            lucide.createIcons();
+        }
+
+        function filterByPerson(figureId) {
+            currentFilter = figureId;
+            renderFigureFilterButtons();
+            renderFiguresGrid();
+            renderPosts();
+            renderPhotos();
+        }
+
+        function openPublishModal() {
+            document.getElementById('publish-modal').classList.remove('hidden');
+        }
+        function closePublishModal() {
+            document.getElementById('publish-modal').classList.add('hidden');
+            document.getElementById('publish-form').reset();
+        }
+
+        function openUploadPhotoModal() {
+            document.getElementById('upload-modal').classList.remove('hidden');
+        }
+        function closeUploadPhotoModal() {
+            document.getElementById('upload-modal').classList.add('hidden');
+            document.getElementById('upload-form').reset();
+            document.getElementById('photo-preview-container').classList.add('hidden');
+            uploadedPreviewDataUrl = null;
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function previewFileImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    uploadedPreviewDataUrl = e.target.result;
+                    const previewImg = document.getElementById('photo-preview-img');
+                    previewImg.src = uploadedPreviewDataUrl;
+                    document.getElementById('photo-preview-container').classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function handlePublishText(event) {
+            event.preventDefault();
+            const studentName = document.getElementById('post-student-name').value;
+            const figureId = document.getElementById('post-figure').value;
+            const type = document.getElementById('post-type').value;
+            const title = document.getElementById('post-title').value;
+            const content = document.getElementById('post-content').value;
+
+            const newPost = {
+                id: Date.now(),
+                studentName,
+                figureId,
+                type,
+                title,
+                content,
+                date: new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })
+            };
+
+            postsData.unshift(newPost);
+            saveLocalStorageData();
+            renderPosts();
+            renderFiguresGrid();
+            closePublishModal();
+
+            scrollToSection('students-work');
+        }
+
+        function handleUploadPhoto(event) {
+            event.preventDefault();
+            const studentName = document.getElementById('photo-student-name').value;
+            const figureId = document.getElementById('photo-figure').value;
+            const caption = document.getElementById('photo-caption').value;
+            const urlInput = document.getElementById('photo-url-input').value;
+
+            let finalImgUrl = uploadedPreviewDataUrl || urlInput;
+
+            if(!finalImgUrl) {
+                finalImgUrl = 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80';
+            }
+
+            const newPhoto = {
+                id: Date.now(),
+                studentName,
+                figureId,
+                imageUrl: finalImgUrl,
+                caption: caption || `Caracterização de ${studentName}`,
+                date: new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })
+            };
+
+            photosData.unshift(newPhoto);
+            saveLocalStorageData();
+            renderPhotos();
+            renderFiguresGrid();
+            closeUploadPhotoModal();
+
+            scrollToSection('gallery');
+        }
+
+        function deletePost(id) {
+            if(confirm('Deseja excluir este post?')) {
+                postsData = postsData.filter(p => p.id !== id);
+                saveLocalStorageData();
+                renderPosts();
+                renderFiguresGrid();
+            }
+        }
+
+        function deletePhoto(id) {
+            if(confirm('Deseja excluir esta foto?')) {
+                photosData = photosData.filter(p => p.id !== id);
+                saveLocalStorageData();
+                renderPhotos();
+                renderFiguresGrid();
+            }
+        }
+
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if(el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
